@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "underground_jungle:temple_brick_tiles"
-  },
-  "result": "underground_jungle:temple_brick_tile_stairs"
-}

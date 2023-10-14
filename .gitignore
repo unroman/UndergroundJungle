@@ -1,3 +1,9 @@
+# gradle
+.gradle/
+build/
+out/
+classes/
+
 # eclipse
 bin
 *.launch
@@ -6,20 +12,23 @@ bin
 .classpath
 .project
 
-# idea
-out
+# IntelliJ Idea
+.idea/
+*.iml
 *.ipr
 *.iws
-*.iml
-.idea
 
-# gradle
-build
-.gradle
+# VS Code
+.vscode/
 
-# other
-eclipse
-run
+# Minecraft
+run/
 
-# Files from Forge MDK
-forge*changelog.txt
+# Java
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr
+
+# MacOS
+*.DS_Store
