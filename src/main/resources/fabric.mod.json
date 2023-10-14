@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "undergroundjungle",
+  "id": "underground_jungle",
   "version": "${version}",
   "name": "Underground Jungle",
   "description": "Adds an underground jungle biome and an underground jungle temple",
@@ -12,14 +12,14 @@
     "sources": "https://github.com/HexagonNico/UndergroundJungle"
   },
   "license": "CC BY-NC-ND 4.0",
-  "icon": "assets/undergroundjungle/icon.png",
+  "icon": "assets/underground_jungle/icon.png",
   "entrypoints": {
     "main": [
-      "io.github.hexagonnico.undergroundjungle.UndergroundJungle"
+      "io.github.hexagonnico.undergroundjungle.UndergroundJungleMod"
     ]
   },
   "mixins": [
-    "undergroundjungle.mixins.json"
+    "mixins.undergroundjungle.json"
   ],
   "depends": {
     "fabricloader": ">=0.14.23",
