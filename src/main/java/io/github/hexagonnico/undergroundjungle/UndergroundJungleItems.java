@@ -7,6 +7,7 @@ import net.minecraft.item.*;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 
 import java.util.HashMap;
@@ -74,9 +75,9 @@ public class UndergroundJungleItems {
         REGISTRY.forEach((id, item) -> Registry.register(Registries.ITEM, new Identifier(UndergroundJungleMod.ID, id), item));
     }
 
-    private static Item register(String id, Item item, ItemGroup... itemGroups) {
+    private static Item register(String id, Item item, RegistryKey<ItemGroup>... itemGroups) {
         REGISTRY.put(id, item);
-        for(ItemGroup itemGroup : itemGroups) {
+        for(RegistryKey<ItemGroup> itemGroup : itemGroups) {
             ItemGroupEvents.modifyEntriesEvent(itemGroup).register(listener -> listener.add(item));
         }
         return item;

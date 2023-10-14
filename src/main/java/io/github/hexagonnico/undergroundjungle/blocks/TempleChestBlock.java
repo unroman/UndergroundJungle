@@ -83,7 +83,7 @@ public class TempleChestBlock extends AbstractChestBlock<TempleChestBlockEntity>
 
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return world.isClient ? checkType(type, UndergroundJungleBlockEntities.TEMPLE_CHEST, TempleChestBlockEntity::clientTick) : null;
+        return world.isClient ? validateTicker(type, UndergroundJungleBlockEntities.TEMPLE_CHEST, TempleChestBlockEntity::clientTick) : null;
     }
 
     @Override
