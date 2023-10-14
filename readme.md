@@ -18,6 +18,10 @@ These tools can mine every block in the vanilla game and are faster than any van
 Jungle zombies can spawn in the underground jungle biome and mossy skeletons can spawn inside the temple. Both these
 mobs can inflict the poison effect to players if they are hit.
 
+### Additional info
+
+The fabric version of this mod requires the [Fabric API](https://fabricmc.net/)
+
 ## Credits
 
 Mod Author: [HexagonNico](https://github.com/HexagonNico)
