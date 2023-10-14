@@ -16,6 +16,9 @@
   "entrypoints": {
     "main": [
       "io.github.hexagonnico.undergroundjungle.UndergroundJungleMod"
+    ],
+    "client": [
+      "io.github.hexagonnico.undergroundjungle.UndergroundJungleClient"
     ]
   },
   "mixins": [

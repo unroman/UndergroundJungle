@@ -6,7 +6,8 @@
   "refmap": "mixins.underground_jungle.refmap.json",
   "mixins": [
     "VanillaBiomeParametersMixin",
-    "ItemEntityMixin"
+    "ItemEntityMixin",
+    "TexturedRenderLayersMixin"
   ],
   "injectors": {
     "defaultRequire": 1

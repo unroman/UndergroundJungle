@@ -12,7 +12,6 @@ public class UndergroundJungleMod implements ModInitializer {
         UndergroundJungleBlockEntities.registerBlockEntities();
         UndergroundJungleItems.registerItems();
         UndergroundJungleEntities.registerEntities();
-        UndergroundJungleEntities.registerRenders();
         UndergroundJungleEntities.registerAttributes();
     }
 }

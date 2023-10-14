@@ -10,6 +10,7 @@ import net.minecraft.block.entity.ViewerCountManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
+import net.minecraft.inventory.SidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.GenericContainerScreenHandler;
@@ -20,9 +21,11 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
-public class TempleChestBlockEntity extends LootableContainerBlockEntity implements LidOpenable {
+public class TempleChestBlockEntity extends LootableContainerBlockEntity implements LidOpenable, SidedInventory {
 
     private DefaultedList<ItemStack> items = DefaultedList.ofSize(27, ItemStack.EMPTY);
 
@@ -162,23 +165,18 @@ public class TempleChestBlockEntity extends LootableContainerBlockEntity impleme
         }
     }
 
-//    @Override
-//    public <T> @NotNull LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-//        return LazyOptional.empty();
-//    }
-//
-//    @Override
-//    public int @NotNull [] getSlotsForFace(@NotNull Direction face) {
-//        return new int[0];
-//    }
-//
-//    @Override
-//    public boolean canPlaceItemThroughFace(int i, @NotNull ItemStack itemStack, Direction side) {
-//        return false;
-//    }
-//
-//    @Override
-//    public boolean canTakeItemThroughFace(int i, @NotNull ItemStack itemStack, @NotNull Direction side) {
-//        return false;
-//    }
+    @Override
+    public int[] getAvailableSlots(Direction side) {
+        return new int[0];
+    }
+
+    @Override
+    public boolean canInsert(int slot, ItemStack stack, @Nullable Direction dir) {
+        return false;
+    }
+
+    @Override
+    public boolean canExtract(int slot, ItemStack stack, Direction dir) {
+        return false;
+    }
 }

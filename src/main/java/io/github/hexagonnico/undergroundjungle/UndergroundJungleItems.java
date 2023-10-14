@@ -1,5 +1,7 @@
 package io.github.hexagonnico.undergroundjungle;
 
+import io.github.hexagonnico.undergroundjungle.renderers.TempleChestItemRenderer;
+import net.fabricmc.fabric.api.client.rendering.v1.BuiltinItemRendererRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
 import net.minecraft.recipe.Ingredient;
@@ -65,7 +67,7 @@ public class UndergroundJungleItems {
     public static final Item TEMPLE_BRICK_TILE_WALL = register("temple_brick_tile_wall", new BlockItem(UndergroundJungleBlocks.TEMPLE_BRICK_TILE_WALL, new Item.Settings()), ItemGroups.BUILDING_BLOCKS);
     public static final Item TEMPLE_CHEST = register("temple_chest", new BlockItem(UndergroundJungleBlocks.TEMPLE_CHEST, new Item.Settings()), ItemGroups.FUNCTIONAL);
     public static final Item JUNGLE_VINES = register("jungle_vines", new BlockItem(UndergroundJungleBlocks.JUNGLE_VINES, new Item.Settings()), ItemGroups.NATURAL);
-//    public static final Item MOSSY_SKELETON_SPAWN_EGG = register("mossy_skeleton_spawn_egg", new SpawnEggItem(UndergroundJungleEntities.MOSSY_SKELETON, 12698049, 7969893, new Item.Settings()), ItemGroups.SPAWN_EGGS);
+    public static final Item MOSSY_SKELETON_SPAWN_EGG = register("mossy_skeleton_spawn_egg", new SpawnEggItem(UndergroundJungleEntities.MOSSY_SKELETON, 12698049, 7969893, new Item.Settings()), ItemGroups.SPAWN_EGGS);
     public static final Item JUNGLE_ZOMBIE_SPAWN_EGG = register("jungle_zombie_spawn_egg", new SpawnEggItem(UndergroundJungleEntities.JUNGLE_ZOMBIE, 44975, 9945732, new Item.Settings()), ItemGroups.SPAWN_EGGS);
 
     public static void registerItems() {
@@ -78,5 +80,9 @@ public class UndergroundJungleItems {
             ItemGroupEvents.modifyEntriesEvent(itemGroup).register(listener -> listener.add(item));
         }
         return item;
+    }
+
+    public static void registerRenderers() {
+        BuiltinItemRendererRegistry.INSTANCE.register(TEMPLE_CHEST, new TempleChestItemRenderer());
     }
 }

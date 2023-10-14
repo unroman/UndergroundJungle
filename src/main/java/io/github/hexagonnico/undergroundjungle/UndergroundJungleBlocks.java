@@ -4,7 +4,9 @@ import io.github.hexagonnico.undergroundjungle.blocks.JungleVinesBlock;
 import io.github.hexagonnico.undergroundjungle.blocks.JungleVinesPlantBlock;
 import io.github.hexagonnico.undergroundjungle.blocks.MudGrassBlock;
 import io.github.hexagonnico.undergroundjungle.blocks.TempleChestBlock;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.block.*;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -39,5 +41,10 @@ public class UndergroundJungleBlocks {
     private static Block register(String id, Block block) {
         REGISTRY.put(id, block);
         return block;
+    }
+
+    public static void registerRenderers() {
+        BlockRenderLayerMap.INSTANCE.putBlock(JUNGLE_VINES_PLANT, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(JUNGLE_VINES, RenderLayer.getCutout());
     }
 }
